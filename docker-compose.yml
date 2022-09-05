@@ -23,5 +23,15 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
 
+  posgtres:
+    image: postgres
+    volumes:
+      - todo-postgres-data:/var/lib/postgresql   
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: todos
+      POSTGRES_USER: postgres
+      
 volumes:
   todo-mysql-data:
+  todo-postgres-data:
